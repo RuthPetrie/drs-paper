@@ -1,0 +1,23 @@
+digraph {
+node [shape=component]
+
+eui -> esgf
+clipcui -> esgf
+cciui -> esgf
+esgf -> drs [label="exploits    "]
+drs -> data [label="exposes    \nfacets"]
+data -> esgf [label=" served\nby"]
+drs -> cv [label="depends     \non"]
+esgf -> anote [dir=none style=dotted]
+
+{esgf,anote;rank=same}
+
+cv [label="Controlled\nVocabularies" shape=note]
+data [label="Data\n(arbitrary organisation)" shape=cylinder]
+drs [label="DRS\n(specialised for\nCMIP, CLIPC,\nESA-CCI)" shape=tab]
+eui [label="ESGF\nUser Interface"]
+clipcui [label="CLIPC\nUser Interface"]
+cciui [label="ESA CCI\nUser Interface"]
+esgf [label="ESGF"]
+anote [shape=none, label="Could use other\nsoftware systems\nto deliver data!"]
+}
